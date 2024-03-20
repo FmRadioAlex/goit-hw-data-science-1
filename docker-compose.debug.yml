@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  data1:
+    image: data1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 Home_work-number_8_Adress_book_file.py "]
+    ports:
+      - 5678:5678
